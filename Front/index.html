@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link rel="shortcut icon" href="./Imagenes/M&E.ico">
+    <title>M&E Indumentaria</title>
+</head>
+
+<body>
+    <!-- BODY -->
+    <section>
+        <div id="particles-js"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <!-- <img src="./Imagenes/Easy-Peasy-2.ico" alt="" class="logo img-fluid"> -->
+                    <img src="./Imagenes/m&elogo.jpeg" alt="" class="logo img-fluid">
+                </div>
+                <div class="col-lg-9" class="textoHead">
+                    <h1 class="display-2"><b> M&E Indumetaria</b></h1>
+                    <p class="lead">Con este software podrás gestionar de forma sencilla y amigable la administracion de tu empresa de indumentaria.</p>
+                    <a style="color:white;;" href="contacto.html">Preguntas Frecuentes</a>
+                    </p>
+                    <hr class="my-4">
+                    <p>Para acceder a las utilidades del programa primero inicie sesión.</p>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Iniciar Sesion</button>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#profile">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO -->
+    <section>
+        <button class="info" onclick="mostrarMensaje()" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </svg>
+  </button>
+    </section>
+
+    <!-- MODAL -->
+    <section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="usuario-svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+                        </div>
+                        <form class="needs-validation" novalidate>
+                            <div>
+                                <div>
+                                    
+                                    <label for="email"><i class="bi bi-envelope-fill"></i> Email</label>
+                                    <input type="email" class="form-control" id="email" value="" required placeholder="Ingrese su dirección de email">
+                                    <div class="invalid-feedback">
+                                        Ingrese una dirección de email valida.
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <label for="contraseña"><i class="bi bi-key-fill"></i> Contraseña</label>
+                                    <input type="password" class="form-control" id="contraseña" value="" required placeholder="Ingrese su contraseña">
+                                    <div class="invalid-feedback">
+                                        Ingrese una contraseña.
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div>
+                                <label for="rol"><i class="bi bi-person-fill"></i> Rol</label>
+                                <select class="form-control" id="cboRo" required>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="botones">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button class="btn btn-dark" type="button" id="btn" onclick="go()">Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Registrar -->
+    <div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+             <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">REGISTRO USUARIO</h5>
+             </div>
+             <div class="modal-body">
+                <div class="container d-flex justify-content-center mt-5">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-sm-12 sol-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label> Nombre Completo </label>
+                                    <input type="text" class="form-control" id="txtNombre"
+                                        placeholder="Ingrese Nombre Completo">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 sol-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label> Documento </label>
+                                    <input type="number" class="form-control" id="txtDocumento"
+                                        placeholder="Ingrese Documento">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 sol-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label> Barrio </label>
+                                    <select  name="barrios" class="form-control mb-3" id="cboBarrio">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 sol-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label> Telefono </label>
+                                    <input type="text" class="form-control" id="txtTelefono"
+                                        placeholder="Ingrese Telefono">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 sol-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label> Rol </label>
+                                    <select  name="role" class="form-control mb-3" id="cbo">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 sol-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label> Email</label>
+                                    <input type="email" class="form-control" id="txtEmail"
+                                        placeholder="Ingrese Email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 sol-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label> Contraseña </label>
+                                    <input type="password" class="form-control" id="txtPass"
+                                        placeholder="Ingrese Contraseña">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" id="btnAgregar" name="btnAgregar" class="btn btn-success">Registrar</button>
+                        <input style="opacity:1;" type="checkbox" data-required="1" name="terminos"><p style="color:black;padding-left:20px;">Aceptar los <a style="color:blue;" href="terminos.html">Términos y Condiciones</a></p>
+                    </div>
+                </div>
+                <form>
+                </form> 
+            </form>   
+        </div>
+    </div>
+ </div>
+    </section>
+
+    <script src="JS/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="JS/particulas.js"></script>
+</body>
+<script>
+
+       // GET BARRIO
+       $(document).ready(function () {
+        $.ajax({
+            url: "https://localhost:5001/Usuario/ObtenerBarrios",
+            type: "GET",
+            success: function (result) {
+                if (result.ok) {
+                    barrio = result.return;
+                    cargarComboDos(barrio);
+                } else {
+                    swal(result.error);
+                }
+            },
+            error: function (error) {
+                swal("Problemas al conseguir barrios");
+            },
+        })
+
+        // carga combo
+        function cargarComboDos(datos) {
+            var html = "<option value=''> SELECCIONE </option>";
+            $("#cboBarrio").append(html);
+            select = document.getElementById("cboBarrio");
+            for (let i = 0; i < datos.length; i++) {
+                var option = document.createElement('option');
+                option.value = datos[i].codBarrio;
+                option.text = datos[i].nombre;
+                select.add(option);
+            }
+        }
+
+    })
+
+       // GET TIPO ROL
+       $(document).ready(function () {
+        $.ajax({
+            url: "https://localhost:5001/Usuario/ObtenerRol",
+            type: "GET",
+            success: function (result) {
+                if (result.ok) {
+                    rol = result.return;
+                    cargarCombo(rol);
+                } else {
+                    swal(result.error);
+                }
+            },
+            error: function (error) {
+                swal("Problemas al conseguir roles");
+            },
+        })
+
+        // carga combo
+        function cargarCombo(datos) {
+            var html = "<option value=''> SELECCIONE </option>";
+            $("#cboRo").append(html);
+            select = document.getElementById("cboRo");
+            for (let i = 0; i < datos.length; i++) {
+                var option = document.createElement('option');
+                option.value = datos[i].idTipoRol;
+                option.text = datos[i].descripcion;
+                select.add(option);
+            }
+        }
+
+    })
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "https://localhost:5001/Usuario/ObtenerRol",
+            type: "GET",
+            success: function (result) {
+                if (result.ok) {
+                    roll = result.return;
+                    cargarComboA(roll);
+                } else {
+                    swal(result.error);
+                }
+            },
+            error: function (error) {
+                swal("Problemas al conseguir roles");
+            },
+        })
+
+        // carga combo
+        function cargarComboA(datos) {
+            var html = "<option value=''> SELECCIONE </option>";
+            $("#cbo").append(html);
+            select = document.getElementById("cbo");
+            for (let i = 0; i < datos.length; i++) {
+                var option = document.createElement('option');
+                option.value = datos[i].idTipoRol;
+                option.text = datos[i].descripcion;
+                select.add(option);
+            }
+        }
+
+    })
+
+    //alta usuario
+    $("#btnAgregar").click(function () {
+        let nombre = $("#txtNombre").val();
+        let dni = $("#txtDocumento").val();//documento
+        let barrio = $("#cboBarrio").val();//direccion
+        let telefono = $("#txtTelefono").val();//barrio
+        let rol = $("#cbo").val();//telefono
+        let email = $("#txtEmail").val();//flag
+        let pass = $("#txtPass").val();//flag
+
+
+        if (nombre === "" || dni === "" || barrio === "" || telefono === "" || rol === "" || email=== "" || pass === "") {
+            swal("Ingrese los datos requeridos");
+        } else {
+            altaUsuario(nombre, dni, barrio, telefono, rol, email, pass);
+        }
+    });
+
+    function altaUsuario(nombre, dni, barrio, telefono, rol, email, pass) {
+        comando = {
+            "nombreCompleto": nombre,
+            "documento": parseInt(dni),
+            "codBarrio": barrio,
+            "telefono": parseInt(telefono),
+            "idTipoRol": rol,
+            "email": email,
+            "contraseña": pass,
+            "flag":1
+        };
+        $.ajax({
+            url: "https://localhost:5001/Usuario/AltaUsuario",
+            type: "POST",
+            dataType: 'JSON',
+            contentType: 'application/json',
+            data: JSON.stringify(comando),
+            success: function (result) {
+                if (result.ok) {
+                    swal("Alta exitosa!");
+                    setTimeout(function () { location.replace("http://127.0.0.1:5503/Front/usuario.html"); }, 3000);
+                } else {
+                    swal(result.error);
+                }
+            },
+            error: function (error) {
+                swal("Problemas en el servidor");
+            },
+        })
+    }
+
+
+
+</script>
+
+</html>
